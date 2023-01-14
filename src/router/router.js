@@ -18,12 +18,12 @@ function AppRouter() {
   const [update, setUpdate ]=useState(false);
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/blg-front'>
       <Navbar isLogged={isLogged} setUpdate={setUpdate} update={update}></Navbar>
         <div className='main'>
         <Routes>
-            <Route exact path='/' element={<Privaterouter></Privaterouter>}>
-              {["/", "/home"].map((path, index) => {
+            <Route exact path='/blg-front' element={<Privaterouter></Privaterouter>}>
+              {["/blg-front", "/home"].map((path, index) => {
                 return (
                   <Route path={path} element={
                       <Home update={update}></Home>
@@ -40,7 +40,6 @@ function AppRouter() {
             <Route exact path='*' element={<div><h1>404 NOT FOUND</h1></div>}></Route>
         </Routes>
         </div>
-        
     </BrowserRouter>
         
   )
