@@ -69,5 +69,5 @@ export const request={
 
 export function logout(){
     cookies.remove('_s');
-    window.location.href='/login';
+    window.location.href='/blg-front/login';
 }
