@@ -69,5 +69,5 @@ export const request={
 
 export function logout(){
     cookies.remove('_s');
-    window.location.reload();
+    window.location.href='/login';
 }
