@@ -68,6 +68,6 @@ export const request={
 }
 
 export function logout(){
-    cookies.remove('_s');
+    cookies.remove('_s',{ path: '/' });
     window.location.href='/blg-front';
 }
