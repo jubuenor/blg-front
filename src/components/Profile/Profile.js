@@ -113,8 +113,8 @@ function Profile() {
         :show==='about'?
         <ListGroup className='mb-3 w-100'>
             <ListGroup.Item>Name: {user.name}</ListGroup.Item>
-            <ListGroup.Item>Last name: {user.name}</ListGroup.Item>
-            <ListGroup.Item>Username: {user.name}</ListGroup.Item>
+            <ListGroup.Item>Last name: {user.last_name}</ListGroup.Item>
+            <ListGroup.Item>Username: {user.username}</ListGroup.Item>
         </ListGroup>
         :show==='posts'?
         myposts()
