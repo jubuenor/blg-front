@@ -32,10 +32,13 @@ function Profile() {
       setLoading(true);
       Promise.all(
         [
-          fetchUser().then((res)=>setUser(res.data)),
+          fetchUser().then((res)=>{let u=res.data;
+            u.likes=u.likes.reverse();
+            setUser(u);}),
           fetchPosts()
         ]
       ).then(()=>{
+        
         setLoading(false);
       })
     },[setPosts,setUser]);
@@ -61,10 +64,10 @@ function Profile() {
       })
     }
     const mylikes=()=>user.likes.map((like,index)=>{
-      const post=posts.filter((post)=>like===post._id);
+      const post=posts.find((post)=>like===post._id);
         if(post){
             return(
-              <Post isLiked={true} post={post[0]} like_post={like_post} key={index} index={index}></Post>
+              <Post isLiked={true} post={post} like_post={like_post} key={index} index={index}></Post>
             )
         }else{
           return null;
