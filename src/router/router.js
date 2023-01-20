@@ -18,7 +18,7 @@ function AppRouter() {
   const [update, setUpdate ]=useState(false);
   
   return (
-    <HashRouter basename='/blg-front'>
+    <HashRouter >
       <Navbar isLogged={isLogged} setUpdate={setUpdate} update={update}></Navbar>
         <div className='main'>
         <Routes>
