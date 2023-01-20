@@ -36,9 +36,9 @@ function Create({show,handleClose,setUpdate,update}) {
       console.log(error);
     }).finally(()=>{
       setUpdate(!update);
+      handleClose();
+      resetForm();
     })
-    handleClose();
-    resetForm();
   }
 
   return (
@@ -77,7 +77,7 @@ function Create({show,handleClose,setUpdate,update}) {
           
           </Modal.Body>
         <Modal.Footer>
-          <Button variant="light" onClick={createPost} disabled={post===''}>
+          <Button variant="light" onClick={createPost} disabled={post===''||post.length>250}>
             Post
           </Button>
         </Modal.Footer>
