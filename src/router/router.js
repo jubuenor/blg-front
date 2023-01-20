@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Home from '../components/Home/Home';
 import Login from '../components/SignIn/SignIn';
 import Register from '../components/SignUp/SignUp';
@@ -18,7 +18,7 @@ function AppRouter() {
   const [update, setUpdate ]=useState(false);
   
   return (
-    <BrowserRouter basename='/blg-front'>
+    <HashRouter basename='/blg-front'>
       <Navbar isLogged={isLogged} setUpdate={setUpdate} update={update}></Navbar>
         <div className='main'>
         <Routes>
@@ -40,7 +40,7 @@ function AppRouter() {
             <Route exact path='*' element={<div><h1>404 NOT FOUND</h1></div>}></Route>
         </Routes>
         </div>
-    </BrowserRouter>
+    </HashRouter>
         
   )
 }
