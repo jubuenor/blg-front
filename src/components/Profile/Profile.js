@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { Container, ListGroup, Button, ButtonGroup} from 'react-bootstrap';
+import { Container, Button, ButtonGroup} from 'react-bootstrap';
 import './Profile.css';
 import { request, fetchUser,logout  } from '../../helper/helper';
 import Loading from '../Loading/Loading';  
