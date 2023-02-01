@@ -8,15 +8,6 @@ import Loading from '../Loading/Loading';
 
 const {APIHOST}=app;
 
-function MsgModal({show,handleClose,msg}){
-  return(
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>{msg}</Modal.Title>
-      </Modal.Header>
-    </Modal>
-  )
-}
 function Register() {
   const [name,setName]= useState("");
   const [last_name,setLast_name]= useState("");
